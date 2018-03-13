@@ -10,7 +10,26 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
 <VBox alignment="center" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+    <MenuBar fx:id="menuBar">
+        <menus>
+            <Menu text="Чат">
+                <items>
+                    <MenuItem text="Очистить" onAction="#clearConversation"/>
+                    <MenuItem text="Выход" onAction="#exitApplication"/>
+                </items>
+            </Menu>
+            <Menu text="Настройки">
+                <items>
+                    <MenuItem text="Сменить пользователя" onAction="#changeUser"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
     <GridPane VBox.vgrow="ALWAYS">
         <TextArea fx:id="messageAuthor" editable="false" styleClass="authorTextArea" GridPane.columnIndex="0" />
         <TextArea fx:id="conversationArea" editable="false" GridPane.columnIndex="1" wrapText="true"/>

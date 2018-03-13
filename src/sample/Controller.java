@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,6 +29,22 @@ public class Controller {
             messageText.clear();
             messageText.requestFocus();
         }
+    }
+
+    public void clearConversation(){
+        messageAuthor.clear();
+        conversationArea.clear();
+        messageText.clear();
+        messageText.requestFocus();
+    }
+
+    public void exitApplication(){
+        System.exit(0);
+    }
+
+    public void changeUser(){
+        userName = JOptionPane.showInputDialog("Введите новое имя:");
+        if (userName.equals("")) userName = "user1";
     }
 
     public void selectSmile(){
